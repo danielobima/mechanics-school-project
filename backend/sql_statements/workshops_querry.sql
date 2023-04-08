@@ -1,3 +1,0 @@
-SELECT DISTINCTROW Workshops.WorkshopName, Workshops.Description, Sum([Customers Invoices].invoice) AS [Sum Of invoice]
-FROM (Vehicles INNER JOIN [Customers Invoices] ON Vehicles.[NumberPlate] = [Customers Invoices].[VehicleNumberPlate]) INNER JOIN ((Workshops INNER JOIN Mechanics ON Workshops.[WorkshopID] = Mechanics.[WorkshopID]) INNER JOIN JobCards ON Mechanics.[MechanicID] = JobCards.[MechanicID]) ON Vehicles.[NumberPlate] = JobCards.[VehicleNumberPlate]
-GROUP BY Workshops.WorkshopName, Workshops.Description;
