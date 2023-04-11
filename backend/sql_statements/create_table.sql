@@ -1,13 +1,13 @@
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'workshops') AND type in (N'U'))
 CREATE TABLE workshops (
-    workshop_id INT PRIMARY KEY,
+    workshop_id INT IDENTITY(1,1) PRIMARY KEY,
     workshop_name VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL
 );
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'mechanics') AND type in (N'U'))
 CREATE TABLE mechanics (
-    mechanic_id INT PRIMARY KEY,
+    mechanic_id INT IDENTITY(1,1) PRIMARY KEY,
     mechanic_name VARCHAR(255) NOT NULL,
     workshop_id INT NOT NULL,
     FOREIGN KEY (workshop_id) REFERENCES workshops(workshop_id)
@@ -15,14 +15,14 @@ CREATE TABLE mechanics (
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'customers') AND type in (N'U'))
 CREATE TABLE customers (
-    customer_id INT PRIMARY KEY,
+    customer_id INT IDENTITY(1,1) PRIMARY KEY,
     customer_name VARCHAR(255) NOT NULL,
     customer_phone VARCHAR(20)
 );
  
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'spare_parts') AND type in (N'U'))
 CREATE TABLE spare_parts (
-    part_id INT PRIMARY KEY,
+    part_id INT IDENTITY(1,1) PRIMARY KEY,
     part_name VARCHAR(255) NOT NULL,
     quantity_in_stock INT NOT NULL,
     cost_per_unit DECIMAL(10,2) NOT NULL
@@ -30,7 +30,7 @@ CREATE TABLE spare_parts (
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'vehicles') AND type in (N'U'))
 CREATE TABLE vehicles (
-    vehicle_id INT PRIMARY KEY,
+    vehicle_id INT IDENTITY(1,1) PRIMARY KEY,
     make VARCHAR(255) NOT NULL,
     model VARCHAR(255) NOT NULL,
     year INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE vehicles (
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'jobs') AND type in (N'U'))
 CREATE TABLE jobs (
-    job_id INT PRIMARY KEY,
+    job_id INT IDENTITY(1,1) PRIMARY KEY,
     vehicle_id INT NOT NULL,
     mechanic_id INT NOT NULL,
     workshop_id INT NOT NULL,

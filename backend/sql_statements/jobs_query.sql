@@ -1,5 +1,5 @@
-SELECT  j.job_id j.vehicle_id c.customer_name c.customer_phone m.mechanic_name 
-        w.workshop_name j.job_description j.start_time j.end_time j.job_status 
+SELECT  j.job_id, j.vehicle_id, c.customer_name, c.customer_phone, m.mechanic_name,
+        w.workshop_name, j.job_description, j.start_time, j.end_time, j.job_status, 
         j.is_paid
 FROM jobs j 
 INNER JOIN vehicles v ON j.vehicle_id = v.vehicle_id

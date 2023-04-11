@@ -1,46 +1,69 @@
-import * as React from 'react';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import * as React from "react";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import {
+  Construction,
+  DataUsage,
+  DirectionsCar,
+  Engineering,
+  HomeRepairService,
+  Inventory,
+  Paid,
+  Person,
+} from "@mui/icons-material";
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton href="/customers">
       <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
+        <Person />
       </ListItemIcon>
       <ListItemText primary="Customers" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href="/mechanics">
       <ListItemIcon>
-        <BarChartIcon />
+        <Engineering />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Mechanics" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href="/workshops">
       <ListItemIcon>
-        <LayersIcon />
+        <HomeRepairService />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Workshops" />
+    </ListItemButton>
+    <ListItemButton href="/vehicles">
+      <ListItemIcon>
+        <DirectionsCar />
+      </ListItemIcon>
+      <ListItemText primary="Vehicles" />
+    </ListItemButton>
+    <ListItemButton href="/jobs">
+      <ListItemIcon>
+        <Construction />
+      </ListItemIcon>
+      <ListItemText primary="Jobs" />
+    </ListItemButton>
+    <ListItemButton href="/spareParts">
+      <ListItemIcon>
+        <Inventory />
+      </ListItemIcon>
+      <ListItemText primary="Spare Parts" />
+    </ListItemButton>
+    <ListItemButton href="/invoices">
+      <ListItemIcon>
+        <Paid />
+      </ListItemIcon>
+      <ListItemText primary="Invoices" />
+    </ListItemButton>
+    <ListItemButton href="/sparePartsUsage">
+      <ListItemIcon>
+        <DataUsage />
+      </ListItemIcon>
+      <ListItemText primary="Spare parts usage" />
     </ListItemButton>
   </React.Fragment>
 );

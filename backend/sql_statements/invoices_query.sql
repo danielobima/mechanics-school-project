@@ -8,4 +8,4 @@ JOIN customers c ON v.customer_id = c.customer_id
 JOIN spare_parts sp ON jp.part_id = sp.part_id
 WHERE j.job_status = 'completed'
 GROUP BY j.job_id, c.customer_name, v.make, v.model, v.year, 
-         j.start_time, j.end_time
+         j.start_time, j.end_time, j.is_paid, j.job_description

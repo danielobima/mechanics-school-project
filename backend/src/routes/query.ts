@@ -24,9 +24,7 @@ queryRouter.post("/:fileName", async (req, res, next) => {
     ).toString();
 
     for (let x of Object.entries(req.body)) {
-      console.log(x);
-      //@ts-ignore
-      file = file.replace(`<<${x[0]}>>`, x[1]);
+      file = file.replace(`<<${x[0]}>>`, x[1] as string);
     }
     console.log(file);
 

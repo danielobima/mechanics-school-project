@@ -1,3 +1,3 @@
-SELECT vehicles.*, customer.customer_name, customer.customer_phone
-FROM vehicles
-JOIN customer ON vehicles.customer_id = customer.customer_id;
+SELECT v.*, c.customer_name, c.customer_phone
+FROM vehicles v
+JOIN customers c ON v.customer_id = c.customer_id;
