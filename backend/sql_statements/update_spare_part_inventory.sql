@@ -1,0 +1,1 @@
+UPDATE spare_parts SET quantity_in_stock = <<quantity_in_stock>> WHERE part_id = <<part_id>>

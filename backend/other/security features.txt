@@ -1,0 +1,5 @@
+Encryption - TO DO
+Views - Do for mechanics, spare parts usage query and vehicles
+Authorization
+Access controls
+Backup
